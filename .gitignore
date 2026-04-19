@@ -21,8 +21,8 @@ dist-ssr/
 .env.production.local
 
 # Bancos de Dados Locais
-kaizen_clicker.sqlite
-kaizen_clicker.sqlite-journal
+backend/kaizen_clicker.sqlite
+backend/kaizen_clicker.sqlite-journal
 *.db
 
 # Artefatos do Editor e SO

@@ -31,8 +31,8 @@ Este projeto full-stack foi construído seguindo o manual das boas práticas do 
 
 ### 2. Configurando o Back-end
 ```bash
-# Navegue até a pasta raiz
-cd kaisen-clicker
+# Navegue até a pasta do servidor
+cd backend
 
 # Instale os pacotes e inicialize as dependências
 npm install
@@ -40,7 +40,7 @@ npm install
 # Copie o arquivo de propriedades .env e configure se necessário
 cp .env.example .env
 
-# O Backend criará o DB na raiz automaticamente com o comando:
+# O Backend criará o DB na raiz da pasta automaticamente com o comando:
 npm run dev
 ```
 > O Servidor Node escutará na porta 3000 por padrão.
