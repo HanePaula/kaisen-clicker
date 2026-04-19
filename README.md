@@ -29,7 +29,22 @@ Este projeto full-stack foi construído seguindo o manual das boas práticas do 
 ### 1. Requisitos Básicos
 - Node.js `(LTS v18 ou superior)` instalado na sua máquina.
 
-### 2. Configurando o Back-end
+### 2. Execução Simplificada (Recomendado)
+Agora você pode rodar todo o projeto (Backend + Frontend) com um único comando na pasta raiz:
+```bash
+# Instale as dependências da raiz
+npm install
+
+# Rodar os dois serviços simultaneamente
+npm run dev
+```
+
+---
+
+### 3. Execução Manual (Separada)
+Se preferir rodar em terminais separados:
+
+#### Configurando o Back-end
 ```bash
 # Navegue até a pasta do servidor
 cd backend
