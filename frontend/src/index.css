@@ -1,0 +1,428 @@
+/* =========================================
+   SISTEMA DE CORES CORPORATIVAS (LIGHT MODE)
+========================================= */
+:root {
+  --bg-color: #f3f4f6;          /* Fundo suave cinza StartUp */
+  --panel-bg: #ffffff;          /* Cartões de Vidro/Papel 100% brancos */
+  --border-color: #e5e7eb;      /* Divisórias muito suaves */
+  --text-main: #111827;         /* Texto Principal (Dark Gray) */
+  --text-muted: #6b7280;        /* Texto Secundário e rótulos */
+  
+  --accent-wine: #9A0B2C;       /* A cor base viva da eKaizen apenas para CTAs (Call to Actions) */
+  --accent-wine-hover: #7b0922; 
+  --accent-gold: #fbbf24;       /* Selo Ouro de Excelencia */
+  --error: #ef4444;             /* Vermelho genérico de alerta de erro na rede */
+  
+  --shadow-soft: 0 4px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* Sombra elegante Apple-like */
+}
+
+/* Base resets e Typography */
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   ESTILOS COMPARTILHADOS (BOTÕES E INPUTS)
+========================================= */
+.kaizen-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.kaizen-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.kaizen-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--accent-wine);
+  color: white;
+  box-shadow: 0 4px 12px rgba(154, 11, 44, 0.2); /* Sombra rubro translúcida */
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-wine-hover);
+  box-shadow: 0 6px 16px rgba(154, 11, 44, 0.3);
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+.btn-danger:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* =========================================
+   PÁGINA: AUTENTICAÇÃO (LOGIN)
+========================================= */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-page form {
+  background-color: var(--panel-bg);
+  padding: 3rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.auth-page h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 0.8rem;
+  background-color: #f9fafb;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-wine);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(154, 11, 44, 0.1);
+}
+
+.error-box {
+  background-color: #fef2f2;
+  color: var(--error);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #fecaca;
+  font-weight: 500;
+}
+
+/* =========================================
+   PÁGINA: DASHBOARD CORPORATIVO (LIGHT LAYOUT)
+========================================= */
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* NavBar Superior Branca */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.top-nav h2 {
+  font-size: 1.3rem;
+  color: var(--accent-wine); /* Branding */
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Layout de Múltiplas Camadas */
+.game-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.layout-top-tier {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 4 Colunas flexiveis para o Mosaico de Graficos da Gestao */
+.layout-bottom-tier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Base larga estendida da Loja pra n esmagar em uma micro coluninha */
+.layout-store-tier {
+  margin-top: 1rem;
+}
+
+/* Grid das Métricas Base */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background: var(--panel-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+}
+
+.metric-card.highlight-wine {
+  border-bottom: 4px solid var(--accent-wine); /* Highlight subtil abaixo e não background escuro */
+}
+
+.metric-card h3 {
+  font-size: 0.80rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding-right: 5.5rem; /* Impede que o título colida embaixo do Padrão Ouro */
+  min-height: 2.2rem;
+}
+
+.metric-card p {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 0.5rem;
+}
+
+/* Selo Ouro */
+.badge-excellence {
+  background: var(--accent-gold);
+  color: #78350f; /* Letra mais escura para contraste forte com o dourado */
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 15px; 
+  right: 15px;
+}
+
+/* =========================================
+   BLOCO: PRODUÇÃO E ESTEIRA (BOTOES ATIVOS)
+========================================= */
+.factory-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+/* =========================================
+   CHART COMPONENT (AREA VISUAL RECHARTS)
+========================================= */
+.chart-wrapper {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ocupa resto da tela abaixo do grid */
+}
+
+.dashboard-title-secondary {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.chart-box {
+  width: 100%;
+  flex: 1;
+}
+
+/* =========================================
+   LOJINHA DE DEPARTAMENTOS (UPGRADES)
+========================================= */
+.upgrade-store {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.upgrade-store h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.upgrade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upgrade-item {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.2s;
+}
+
+.upgrade-item:hover {
+  background: #fff;
+  border-color: #d1d5db;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.upgrade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upgrade-header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.price-tag {
+  color: var(--accent-wine);
+  font-weight: 800;
+  font-size: 0.9rem;
+  background: rgba(154, 11, 44, 0.08); /* Fundo pastel pra ressaltar preço */
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.upgrade-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.upgrade-item .kaizen-btn {
+  align-self: flex-start; /* Evita que o Flex stretch transforme o botão num cacetete do tamanho da tela */
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   ANIMAÇÕES DE ENTRADA (FADE IN + SLIDE UP)
+========================================= */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicando em todos os blocos do Dashboard com estado invisível base */
+.chart-wrapper, .metric-card, .upgrade-store {
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.chart-wrapper:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+/* Staggered Delay (Cascata Visual pra parecer que as peças tão montando) */
+.metric-card:nth-child(1) { animation-delay: 0.1s; }
+.metric-card:nth-child(2) { animation-delay: 0.2s; }
+.metric-card:nth-child(3) { animation-delay: 0.3s; }
+.metric-card:nth-child(4) { animation-delay: 0.4s; }
+
+.layout-top-tier .chart-wrapper { animation-delay: 0.5s; }
+
+.layout-bottom-tier > :nth-child(1) { animation-delay: 0.6s; }
+.layout-bottom-tier > :nth-child(2) { animation-delay: 0.7s; }
+.layout-bottom-tier > :nth-child(3) { animation-delay: 0.8s; }
+.layout-bottom-tier > :nth-child(4) { animation-delay: 0.9s; }
+
+.upgrade-store { animation-delay: 1.0s; }

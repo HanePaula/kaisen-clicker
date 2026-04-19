@@ -45,8 +45,8 @@ export const FinancialBarChart = ({ totalEarned, currentLiquidity }) => {
                             fill="#0ea5e9" 
                             radius={[6, 6, 0, 0]} 
                             barSize={40} 
-                            
-                            animationDuration={500} 
+                            isAnimationActive={true}
+                            animationDuration={1200} 
                             activeBar={{ stroke: '#0ea5e9', strokeWidth: 2, fillOpacity: 0.8 }}
                         />
                         <Bar 
@@ -54,8 +54,8 @@ export const FinancialBarChart = ({ totalEarned, currentLiquidity }) => {
                             fill="#10b981" 
                             radius={[6, 6, 0, 0]} 
                             barSize={40} 
-                            
-                            animationDuration={500} 
+                            isAnimationActive={true}
+                            animationDuration={1200} 
                             activeBar={{ stroke: '#10b981', strokeWidth: 2, fillOpacity: 0.8 }}
                         />
                     </BarChart>

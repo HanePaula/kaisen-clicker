@@ -31,9 +31,9 @@ export const RatesBarChart = ({ autoclick, tickEfficiency }) => {
                             dataKey="valor" 
                             radius={[0, 6, 6, 0]} 
                             barSize={28} 
-                            
-                            animationDuration={500}
-                            
+                            isAnimationActive={true}
+                            animationDuration={1000}
+                            activeBar={{ fillOpacity: 0.8 }}
                         >
                             {data.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={getColor(entry.name)} />

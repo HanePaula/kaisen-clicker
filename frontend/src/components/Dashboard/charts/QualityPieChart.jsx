@@ -26,9 +26,9 @@ export const QualityPieChart = ({ totalProduced, defects }) => {
                             paddingAngle={4}
                             dataKey="value"
                             stroke="none"
-                            
-                            animationDuration={400}
-                            
+                            isAnimationActive={true}
+                            animationDuration={1500}
+                            animationBegin={0}
                         >
                             {data.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

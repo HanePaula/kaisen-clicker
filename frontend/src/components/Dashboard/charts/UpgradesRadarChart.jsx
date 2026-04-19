@@ -31,8 +31,8 @@ export const UpgradesRadarChart = ({ distribution }) => {
                             stroke="#9A0B2C" 
                             fill="#9A0B2C" 
                             fillOpacity={0.4} 
-                            
-                            animationDuration={600}
+                            isAnimationActive={true}
+                            animationDuration={1200}
                         />
                         <Tooltip 
                             contentStyle={{ borderRadius: '12px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }} 

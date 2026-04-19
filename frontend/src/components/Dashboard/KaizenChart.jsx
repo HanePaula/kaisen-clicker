@@ -43,9 +43,9 @@ export const KaizenChart = ({ data }) => {
                             strokeWidth={3} 
                             fillOpacity={1} 
                             fill="url(#colorPoints)" 
-                            
-                            animationDuration={400} 
-                            
+                            isAnimationActive={true}
+                            animationDuration={1500} 
+                            animationEasing="ease-in-out"
                             activeDot={{ r: 6, strokeWidth: 0, fill: '#9A0B2C' }}
                         />
                         
@@ -57,9 +57,9 @@ export const KaizenChart = ({ data }) => {
                             dataKey="efficiency" 
                             stroke="#3b82f6" 
                             strokeWidth={3} 
-                            
-                            animationDuration={400} 
-                            
+                            isAnimationActive={true}
+                            animationDuration={1500} 
+                            animationEasing="ease-in-out"
                             dot={false} 
                             activeDot={{ r: 6, strokeWidth: 0, fill: '#3b82f6' }}
                         />
